@@ -10,6 +10,7 @@ output "PrivateSubnet" {
 	description = "Subnet resource associated with the private subnet"
 	value = {
 		"id" : azurerm_subnet.PrivateSubnet.id
+		"name" : azurerm_subnet.PrivateSubnet.name
 	}
 }
 
@@ -25,6 +26,15 @@ output "PublicSubnet" {
 	description = "Subnet resource associated with the public subnet"
 	value = {
 		"id" : azurerm_subnet.PublicSubnet.id
+		"name" : azurerm_subnet.PublicSubnet.name
+	}
+}
+
+output "ResourceGroup" {
+	description = "Resource Group where resources are deployed"
+	value = {
+		location = local.ResourceGroupLocation
+		name = local.ResourceGroupName
 	}
 }
 
